@@ -1,0 +1,42 @@
+{
+  "name": "video-transcoding-ffmpeg-nodejs",
+  "version": "1.0.0",
+  "description": "nodejs video transcoding using ffmpeg",
+  "main": "dist/index.js",
+  "author": "Jai Sharma <jaiprakash.sharma44@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "copy": "yarn run cpy '.env.example' '.' --rename=.env --no-overwrite ",
+    "build:babel": "NODE_ENV=production babel src --out-dir dist --extensions .js --source-maps inline",
+    "build": "yarn run build:babel",
+    "start": "yarn run build && node dist/index.js",
+    "dev": " yarn run copy && NODE_ENV=development nodemon --watch src -e js --exec babel-node ./src/index.js"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "helmet": "^4.1.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "cpy-cli": "^3.1.1",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2"
+  }
+}

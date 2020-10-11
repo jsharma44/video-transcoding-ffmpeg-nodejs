@@ -1,0 +1,10 @@
+node_modules
+dist
+debug.log
+yarn.error
+yarn.debug
+.env
+yarn-error.log
+tmp
+videos
+
